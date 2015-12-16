@@ -12,7 +12,7 @@
     <title>注册</title>
 </head>
 <body>
-  <form>
+  <form  >
     邮  箱:<input type="email" name="email"/><br/>
     姓  名:<input type="text" name="name"/><br/>
     密  码:<input type="password" name="password"/><br/>
