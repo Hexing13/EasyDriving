@@ -5,8 +5,8 @@ package com.easyDriving.pojo;
  */
 public class Subject {
     private int s_id;//自增
-  //  private String s_title;
-    private String s_content;
+    private String s_title;//试题
+    private String s_img;//图片
     private String answer;
     private String answer_a;
     private String answer_b;
@@ -14,16 +14,8 @@ public class Subject {
     private String answer_d;
     private String s_chapter;//章节
     private String s_type;//科目
-    private String s_image;
-    private String s_analyze;//解析
+    private String jiexi;//解析
 
-    public String getS_analyze() {
-        return s_analyze;
-    }
-
-    public void setS_analyze(String s_analyze) {
-        this.s_analyze = s_analyze;
-    }
 
     public int getS_id() {
         return s_id;
@@ -33,20 +25,12 @@ public class Subject {
         this.s_id = s_id;
     }
 
-//    public String getS_title() {
-//        return s_title;
-//    }
-//
-//    public void setS_title(String s_title) {
-//        this.s_title = s_title;
-//    }
-
-    public String getS_content() {
-        return s_content;
+    public String getS_title() {
+        return s_title;
     }
 
-    public void setS_content(String s_content) {
-        this.s_content = s_content;
+    public void setS_title(String s_title) {
+        this.s_title = s_title;
     }
 
     public String getAnswer() {
@@ -105,11 +89,20 @@ public class Subject {
         this.s_type = s_type;
     }
 
-    public String getS_image() {
-        return s_image;
+    public String getS_img() {
+        return s_img;
     }
 
-    public void setS_image(String s_image) {
-        this.s_image = s_image;
+    public void setS_img(String s_img) {
+        this.s_img = s_img;
     }
+
+    public String getJiexi() {
+        return jiexi;
+    }
+
+    public void setJiexi(String jiexi) {
+        this.jiexi = jiexi;
+    }
+
 }

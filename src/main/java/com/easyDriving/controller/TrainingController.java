@@ -27,7 +27,7 @@ import java.util.List;
 public class TrainingController {
     @RequestMapping()
     public String index(){
-        return "video";
+        return "index";
     }
     @RequestMapping(value = "addimage",method = RequestMethod.POST)
     public String uploadVideo(HttpServletRequest request,HttpServletResponse response) throws FileUploadException, IOException {

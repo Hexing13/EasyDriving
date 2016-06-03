@@ -34,14 +34,14 @@ function addUser(){
             success:function(r){
                 alert(r.result);
 
-                //if(result=="success"){
-                //    alert("注册成功！");
-                //}else if(result=="email"){
-                //    alert("注册失败，邮箱已存在！");
-                //
-                //}else if(result=="name"){
-                //    alert("注册失败，用户名已存在！");
-                //}
+                if(r=="success"){
+                    alert("注册成功！");
+                }else if(r=="email"){
+                    alert("注册失败，邮箱已存在！");
+
+                }else if(r=="name"){
+                    alert("注册失败，用户名已存在！");
+                }
             }
         });
     }

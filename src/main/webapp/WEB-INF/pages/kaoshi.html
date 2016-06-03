@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>驾考考试</title>
+    <script src="js/jquery-2.1.4.js" charset="utf-8"></script>
+    <script src="js/json2.js" charset="utf-8"></script>
+</head>
+<body>
+    <a href="#" onclick="shunxu()">顺序练习</a>
+    <a href="#">章节练习</a>
+    <a href="#">随机练习</a>
+</body>
+<script>
+    var shunxu = function(){
+        var data={
+            s_type:"c1_1",
+            method:"shunxu",
+            id:10
+        };
+        $.ajax({
+            url: 'subject/gettest',
+            data: data,
+            type: 'post',
+            dataType: "json",
+            success: function (r) {
+                alert(r.s_id);
+
+            }
+        })
+    }
+</script>
+</html>

@@ -70,6 +70,7 @@ public class UserController {
     public @ResponseBody String doValidate(@RequestParam String name,@RequestParam String acticode) throws IOException {
         JSONObject jsonObject = new JSONObject();
         String u_acticode = userService.getActicode(name);
+        System.out.println(u_acticode   );
         if(u_acticode==null){
             //如果已经验证过
             jsonObject.put("result","done");

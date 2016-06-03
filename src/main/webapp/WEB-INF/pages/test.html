@@ -1,0 +1,21 @@
+<%@ page import="java.util.*" %>
+<%@ taglib uri="oscache" prefix="cache"%>
+
+<html>
+<body>
+<!— 未使用到标签 -->
+没有缓存的日期: <%= new Date()%>
+    <p>
+    <!-- 自动刷新但是没有给标记符 key 赋值 -->
+    <cache:cachetime="30">
+    每30秒刷新缓存一次的日期:<%= new Date()%>
+    </cache:cache>
+    <!-- 手动刷新，给标记符 key 赋值了 -->
+    <cache:cachekey="testcache">
+    手动刷新缓存的日期: <%= new Date() %>
+    </cache:cache>
+    </p>
+<a href="cache2.jsp">手动刷新</a>
+</body>
+</html>
+

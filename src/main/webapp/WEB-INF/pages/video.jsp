@@ -11,6 +11,7 @@
     <title>上传视频</title>
 </head>
 <body>
+
   <form action="subject/uploadvideo" method="post" enctype="multipart/form-data">
     上传：<input type="file" name="video"><br><br>
     提交：<input type="submit" name="submit">

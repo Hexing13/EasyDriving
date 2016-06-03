@@ -20,4 +20,10 @@ public class SubjectServiceImp implements SubjectService{
     public void addTest(Subject subject) throws IOException {
         subjectDao.addTest(subject);
     }
+
+    //获得测试题
+    @Override
+    public Subject getTest(String s_type, String method, int id) throws IOException {
+        return subjectDao.getTest(s_type,method,id);
+    }
 }

@@ -2,6 +2,7 @@ package com.easyDriving.controller;
 
 import com.easyDriving.pojo.Subject;
 import com.easyDriving.service.SubjectService;
+import com.easyDriving.utils.JsonHelper;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -32,67 +33,67 @@ public class SubjectController {
 
     @RequestMapping()
     public String index(){
-        return "video";
+        return "kaoshi";
     }
 
-    @RequestMapping(value = "addtest",method = RequestMethod.POST)
-    public @ResponseBody String addTest(@RequestParam String s_chapter,@RequestParam String s_type,@RequestParam String addtest,HttpServletRequest request,HttpServletResponse response) throws IOException {
-        JSONObject jsonObject = new JSONObject();
-        Subject subject = new Subject();
-        subject.setS_chapter(s_chapter);
-        subject.setS_type(s_type);
-        String[] addtests = addtest.split("_ueditor_page_break_tag_");
-        System.out.println(addtests.length);
-        for (int i = 0; i < addtests.length;i++){
-            String[] strs = addtests[i].split("</p>");
-            int length = strs.length;
-            System.out.println(length);
-            switch (length)
-            {
-                case 5:
-                    subject.setS_content(strs[0].substring(3));
-                    subject.setAnswer_a(strs[1].substring(3));
-                    subject.setAnswer_b(strs[2].substring(3));
-                    subject.setAnswer(strs[3].substring(7));
-                    subject.setS_analyze(strs[4].substring(7));
-                    break;
-                case 6:
-                    subject.setS_content(strs[0].substring(3));
-                    subject.setAnswer_a(strs[1].substring(3));
-                    subject.setAnswer_b(strs[2].substring(3));
-                    subject.setAnswer(strs[3].substring(7));
-                    subject.setS_analyze(strs[4].substring(7));
-                    subject.setS_image(strs[5].split("image/|\"")[2]);
-                    break;
-                case 7:
-                    subject.setS_content(strs[0].substring(3));
-                    subject.setAnswer_a(strs[1].substring(3));
-                    subject.setAnswer_b(strs[2].substring(3));
-                    subject.setAnswer_c(strs[3].substring(3));
-                    subject.setAnswer_d(strs[4].substring(3));
-                    subject.setAnswer(strs[5].substring(7));
-                    subject.setS_analyze(strs[6].substring(7));
-                    break;
-                case 8:
-                    subject.setS_content(strs[0].substring(3));
-                    subject.setAnswer_a(strs[1].substring(3));
-                    subject.setAnswer_b(strs[2].substring(3));
-                    subject.setAnswer_c(strs[3].substring(3));
-                    subject.setAnswer_d(strs[4].substring(3));
-                    subject.setAnswer(strs[5].substring(7));
-                    subject.setS_analyze(strs[6].substring(7));
-                    subject.setS_image(strs[7].split("image/|\"")[2]);
-                    break;
-                default:
-                    jsonObject.put("result",i);
-                    System.out.println(jsonObject.toString());
-                    return jsonObject.toString();
-            }
-            subjectService.addTest(subject);
-        }
-        jsonObject.put("result","success");
-        return jsonObject.toString();
-    }
+//    @RequestMapping(value = "addtest",method = RequestMethod.POST)
+//    public @ResponseBody String addTest(@RequestParam String s_chapter,@RequestParam String s_type,@RequestParam String addtest,HttpServletRequest request,HttpServletResponse response) throws IOException {
+//        JSONObject jsonObject = new JSONObject();
+//        Subject subject = new Subject();
+//        subject.setS_chapter(s_chapter);
+//        subject.setS_type(s_type);
+//        String[] addtests = addtest.split("_ueditor_page_break_tag_");
+//        System.out.println(addtests.length);
+//        for (int i = 0; i < addtests.length;i++){
+//            String[] strs = addtests[i].split("</p>");
+//            int length = strs.length;
+//            System.out.println(length);
+//            switch (length)
+//            {
+//                case 5:
+//                    subject.setS_content(strs[0].substring(3));
+//                    subject.setAnswer_a(strs[1].substring(3));
+//                    subject.setAnswer_b(strs[2].substring(3));
+//                    subject.setAnswer(strs[3].substring(7));
+//                    subject.setS_analyze(strs[4].substring(7));
+//                    break;
+//                case 6:
+//                    subject.setS_content(strs[0].substring(3));
+//                    subject.setAnswer_a(strs[1].substring(3));
+//                    subject.setAnswer_b(strs[2].substring(3));
+//                    subject.setAnswer(strs[3].substring(7));
+//                    subject.setS_analyze(strs[4].substring(7));
+//                    subject.setS_image(strs[5].split("image/|\"")[2]);
+//                    break;
+//                case 7:
+//                    subject.setS_content(strs[0].substring(3));
+//                    subject.setAnswer_a(strs[1].substring(3));
+//                    subject.setAnswer_b(strs[2].substring(3));
+//                    subject.setAnswer_c(strs[3].substring(3));
+//                    subject.setAnswer_d(strs[4].substring(3));
+//                    subject.setAnswer(strs[5].substring(7));
+//                    subject.setS_analyze(strs[6].substring(7));
+//                    break;
+//                case 8:
+//                    subject.setS_content(strs[0].substring(3));
+//                    subject.setAnswer_a(strs[1].substring(3));
+//                    subject.setAnswer_b(strs[2].substring(3));
+//                    subject.setAnswer_c(strs[3].substring(3));
+//                    subject.setAnswer_d(strs[4].substring(3));
+//                    subject.setAnswer(strs[5].substring(7));
+//                    subject.setS_analyze(strs[6].substring(7));
+//                    subject.setS_image(strs[7].split("image/|\"")[2]);
+//                    break;
+//                default:
+//                    jsonObject.put("result",i);
+//                    System.out.println(jsonObject.toString());
+//                    return jsonObject.toString();
+//            }
+//            subjectService.addTest(subject);
+//        }
+//        jsonObject.put("result","success");
+//        return jsonObject.toString();
+//    }
 
     @RequestMapping(value = "uploadvideo",method = RequestMethod.POST)
     public String uploadVideo(HttpServletRequest request,HttpServletResponse response) throws FileUploadException, IOException {
@@ -134,4 +135,18 @@ public class SubjectController {
         jsonObject.put("result","success");
         return "success";
     }
+
+    @RequestMapping(value = "gettest",method = RequestMethod.POST)
+    public @ResponseBody String  getTtest(@RequestParam String s_type,@RequestParam String method,@RequestParam int id) throws IOException {
+        if(method=="suiji"){
+
+        }
+        Subject subject = subjectService.getTest(s_type, method, id);
+//        System.out.println("id:"+subject.getS_id());
+//        System.out.println("jiexi: "+subject.getJiexi());
+        JSONObject jsonObject = JsonHelper.toJSON(subject);
+        System.out.println(jsonObject.toString());
+        return jsonObject.toString();
+    }
+
 }

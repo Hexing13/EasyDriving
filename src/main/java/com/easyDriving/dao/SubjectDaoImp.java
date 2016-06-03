@@ -26,4 +26,16 @@ public class SubjectDaoImp implements SubjectDao{
             sqlSession.close();
         }
     }
+
+    //获得测试题
+    @Override
+    public Subject getTest(String s_type, String method, int id) throws IOException {
+        SqlSession sqlSession = MybatisUtils.getSession();
+        try {
+            SubjectMapper subjectMapper = sqlSession.getMapper(SubjectMapper.class);
+            return subjectMapper.getTest(s_type,id);
+        }finally {
+            sqlSession.close();
+        }
+    }
 }
