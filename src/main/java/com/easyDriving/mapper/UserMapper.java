@@ -2,6 +2,7 @@ package com.easyDriving.mapper;
 
 import com.easyDriving.pojo.User;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -30,8 +31,8 @@ public interface UserMapper {
     public void modifyState(String u_name);
 
     //验证登录
-    @Select("select count(u_id) from user where u_email=#{u_email} and u_password = #{u_password}")
-    public int doLogin(String u_email,String u_password);
+    @Select("select count(u_id) from user where u_email=#{u_email} and u_password=#{u_password}")
+    public int doLogin(@Param("u_email")String u_email,@Param("u_password")String u_password);
 
     //是否存在该邮箱
     @Select("select count(u_id) from user where u_email=#{u_email}")

@@ -1,0 +1,110 @@
+/* 
+* @Author: anchen
+* @Date:   2016-03-05 18:45:43
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-03-17 23:06:37
+*/
+.fullPage{
+    min-height: 700px;
+
+    background: url(../images/examBg.jpg) 50% 50px;
+}
+.solider{
+    position: relative;
+    background-size: cover!important;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat!important;
+    overflow: hidden;
+}
+.container{
+    width:1180px;
+    min-height:700px;
+    padding:0 15px;
+    margin:0 auto;
+}
+.text_msg{
+    position:absolute;
+    height: 100%;
+    z-index: 0;
+}
+.slider_box{
+    display:table;
+    width:100%;
+    height:100%;
+
+    margin-bottom: 50px;
+
+    box-sizing: border-box;
+}
+.row{
+    display: table-cell;
+    vertical-align: middle;
+
+    padding: 0 15px;
+}
+.lightBg{
+
+    background-color: rgba(255,255,255,.4);
+    padding: 10px;
+}
+.width_ad{
+    float:left;
+
+    color:#fff;
+    letter-spacing: 2px !important;
+    text-transform: uppercase;
+}
+.bg-blue{
+    background:#3fc0cd;
+    width:100%; 
+    height:auto;
+    padding:3%;
+}
+.text_title{
+    font-size:22px;
+    font-weight:600;
+}
+.tetx_small{
+    font-size:18px;
+    letter-spacing:2em !important;
+    padding:0 5%;
+    color:#fff;
+}
+.bg-blue .sectionTitle{
+    width:90%;
+    padding-left:5%;
+}
+.bg-blue .sectionTitle h2{
+    color:#000;
+}
+.content{
+    width:100%;
+    background-color:#fff;
+    padding:50px;
+    height:auto;
+}
+.onlineClass{
+    width:90%;
+
+    margin:0 auto;
+
+    background-color:#fff;
+}
+.onlineClass ul{
+    overflow:hidden;
+}
+.onlineClass ul li {
+    width: 25%;
+    text-align: center;
+    float:left;
+    /*position: absolute;*/
+}
+.onlineClass ul li a{
+    margin:5px;
+}
+ul li img{
+    width:266px;
+    height:254px;
+    /*border:solid 2px #425784;*/
+}

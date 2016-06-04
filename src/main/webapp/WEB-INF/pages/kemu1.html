@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>在线课堂|科目一</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" media="screen and (min-width: 768px)" href="css/style.css">
+        <link type="text/css" rel="stylesheet" media="screen and (min-width: 768px)" href="css/kemu1.css">
+    </head>
+    <body>
+        <header>
+            <nav class="nav">                
+            <div class="warp clearfix"> 
+                <div class="logo"><a>轻松驾</a></div>
+                <ul class="nav_style">
+                    <li><a href="index.html" title="">首页</a></li>
+                    <li><a href="" title="找驾校">找驾校</a></li>
+                    <li><a href="" title="找陪练">找陪练</a></li>
+                    <li class="current"><a href="examIndex.html" title="在线课堂">在线课堂</a></li>
+                    <li><a href="" title="资讯">资讯</a></li>
+                    <li><a href="" title="社区">社区</a></li>
+                </ul>
+                <!-- ul end -->
+                <div class="about_us"><a href="" title="关于我们">关于我们</a></div>
+                <a class="search_btn_click" id="searchBtnClick"><i class="fa fa-seach"></i>搜索</a>
+                </div>
+                <!-- ./nav_width -->
+            </nav> 
+            <!-- nav end   -->
+        </header>
+        <!-- /header -->
+        <div class="search_box" id="search_box" style="display:none;">
+                <form name="form1">
+                    <input type="search" placeholder="输入关键词">
+                    <button type="submit" class="search_btn">搜索</button>
+                </form>
+        </div>
+        <!-- ./search -->
+        <div class="main">
+            <nav class="breadcrumb_container">
+                <lable class="breadcrumb_label_container">
+                    <a href="examIndex.html" >在线课堂</a>
+                    <span class="gap">></span>
+                    <a href="examIndex.html#kemu1" >科目1</a>
+                    <span class="gap">></span>
+                    <a class="current_link">顺序练习</a>
+                </lable>
+            </nav>
+            <div class="subject_box">
+                <div class="subject_progress">
+                    
+                </div>
+                <!-- /.subject_progress -->
+                <div class="subject_main">
+                    <div class="shiti_item" id="shitiContainer">
+                        <div class="shiti_question"></div>
+                        <a class="shiti_option_warp" data-id="a0">
+                            <label class="radio">
+                                <span class="icons"></span>
+                                <input type="radio" data-toggle="radio">
+                                <pre></pre>
+                            </label>
+                        </a>
+                        <a class="shiti_option_warp" data-id="b">
+                            <label class="radio">
+                                <span class="icons"></span>
+                                <input type="radio" data-toggle="radio">
+                                <pre></pre>
+                            </label>
+                        </a>
+                        <a class="shiti_option_warp" data-id="c">
+                            <label class="radio">
+                                <span class="icons"></span>
+                                <input type="radio" data-toggle="radio">
+                                <pre></pre>
+                            </label>
+                        </a>
+                        <a class="shiti_option_warp" data-id="d">
+                            <label class="radio">
+                                <span class="icons"></span>
+                                <input type="radio" data-toggle="radio">
+                                <pre></pre>
+                            </label>
+                        </a>
+                    </div>
+                    <span class="note">单选题，请选择你认为正确的答案！</span>
+                </div>
+                <!-- 选题区 -->
+                <div class="button_warp clearfix">
+                    <button class="fl" id="pre" type="button">上一题</button>
+                    <button class="fl" id="next" type="button">下一题</button>
+                    <button class="fr" type="button" id="showAnswer">查看解析</button>
+                </div>
+                <!-- 解析 -->
+                <div class="explain_warp" id="explainWarp">
+                    <div class="explain">的册封为而繁荣提供同人本vrg
+                    </div>
+                </div>
+                <!-- /.explain_warp -->
+            </div>
+            <!-- /.subject_box -->
+        </div>
+        <!-- /.main -->
+        <footer class="ft_warp"> 
+            <div class="footerLeft">
+            hh  
+            </div> 
+            <div class="footerRight">
+               ff 
+            </div> 
+        </footer>
+        <!-- footer-end -->
+        <script src="js/jquery-1.11.3.min.js" charset="utf-8"></script>
+        <script src="js/exam.js" charset="utf-8"></script>
+    </body>
+</html>

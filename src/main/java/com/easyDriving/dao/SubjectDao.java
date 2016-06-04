@@ -47,4 +47,15 @@ public class SubjectDao{
             sqlSession.close();
         }
     }
+
+    //获得某一科目有多少章节
+    public int getTotalChapter(String s_type) throws IOException {
+        SqlSession sqlSession = MybatisUtils.getSession();
+        try {
+            SubjectMapper subjectMapper = sqlSession.getMapper(SubjectMapper.class);
+            return subjectMapper.getTotalChapter(s_type);
+        }finally {
+            sqlSession.close();
+        }
+    }
 }

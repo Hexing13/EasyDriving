@@ -3,32 +3,31 @@
     <head>
         <title>轻松驾</title>
         <meta charset="utf-8">
-        <script src="js/jquery-2.1.4.js" charset="utf-8"></script>
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" media="screen and (min-width: 768px)" href="css/style.css">
         <link type="text/css" rel="stylesheet" media="screen and (min-width: 768px)" href="css/index.css">
-        <script src="js/validForms.js" charset="utf-8"></script>
-        <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
         <header>
-            <nav class="nav">
-                <div class="warp clearfix"> 
+            <nav class="nav">                
+            <div class="warp clearfix"> 
                 <div class="logo"><a>轻松驾</a></div>
                 <ul class="nav_style">
                     <li class="current"><a href="#" title="">首页</a></li>
                     <li><a href="" title="找驾校">找驾校</a></li>
                     <li><a href="" title="找陪练">找陪练</a></li>
-                    <li><a href="" title="在线课堂">在线课堂</a></li>
+                    <li><a href="examIndex.html" title="在线课堂">在线课堂</a></li>
                     <li><a href="" title="资讯">资讯</a></li>
                     <li><a href="" title="社区">社区</a></li>
                 </ul>
                 <!-- ul end -->
                 <div class="about_us"><a href="" title="关于我们">关于我们</a></div>
-                <a class="search_btn_click" id="searchBtnClick">搜索</a>
+                <a class="search_btn_click" id="searchBtnClick"><i class="fa fa-seach"></i>搜索</a>
                 </div>
                 <!-- ./nav_width -->
             </nav> 
-            <!-- nav end   -->
+            <!-- nav end -->
         </header>
         <!-- /header -->
             <div class="search_box" id="search_box" style="display:none;">
@@ -54,17 +53,17 @@
                             <div class="tab_warp">
                                <div class="box">
                                    <form name="form2" method="post" id="form2">
-                                       <input type="text" name="user_name" value="" id="user_name" placeholder="用户名">
-                                       <input type="text" name="user_email" value="" id="user_email" placeholder="邮箱">
-                                       <input type="password" name="user_password" id="pwd1" value="" placeholder="设置密码">
-                                       <input type="password" name="user_password" id="pwd2" value="" placeholder="确定密码">
+                                       <input type="text" name="u_name" value="" id="user_name" placeholder="用户名">
+                                       <input type="text" name="u_email" value="" id="user_email" placeholder="邮箱">
+                                       <input type="password" name="u_password" id="pwd1" value="" placeholder="设置密码">
+                                       <input type="password" name="u_password" id="pwd2" value="" placeholder="确定密码">
                                        <input type="button" id="signUp" name="submit" value="免费注册">
                                    </form>
                                 </div>
                                 <!-- sign up-end  -->
-                                <form class="box" name="form3" style="display:none">
-                                        <input type="text" name="user_name" placeholder="用户名">
-                                        <input type="password" name="user_password" placeholder="密码">
+                                <form class="box" name="form3" style="display:none" id="form3">
+                                        <input type="text" name="u_email" placeholder="邮箱">
+                                        <input type="password" name="u_password" placeholder="密码">
                                         <div class="safe">
                                             <span>
                                                 <lable><input type="checkbox" checked="checked">自动登录</lable>
@@ -74,7 +73,7 @@
                                             </span>
                                         </div>
                                         <!-- ./safe -->
-                                        <input type="button" name="submit" value="登录">
+                                        <input type="button" id="signIn" name="submit" value="登录">
                                 </form>
                                 <!-- sign in-end  -->
                             </div>
@@ -90,12 +89,12 @@
         <div class="content">
             <!-- 模块内容-导航 -->
             <section >
-                <ul>
-                    <li><a title="驾校查询"></a></li>
-                    <li><a title="报名须知"></a></li>
-                    <li><a title="学车流程"></a></li>
-                    <li><a title="最新新闻"></a></li>
-                    <li ><a title="站内公告"></a></li>
+                <ul class="list-group menu">
+                    <li><a title="驾校查询"class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i></a></li>
+                    <li><a title="报名须知"class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i></a></li> 
+                    <li><a title="学车流程"class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i></a></li>
+                    <li><a title="最新新闻"class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i></a></li>
+                    <li ><a title="站内公告"class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i></a></li>
                 </ul>
             </section>
             <!-- 第一部分:驾校查询 -->
@@ -125,5 +124,8 @@
         <footer>  
         </footer>
         <!-- footer-end -->
+        <script src="js/jquery-1.11.3.min.js" charset="utf-8"></script>
+        <script src="js/validForms.js" charset="utf-8"></script>
+        <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>

@@ -1,0 +1,103 @@
+body{
+    background:#f2f2f2;
+}
+.main{
+    margin: 0 auto;
+    width:90%;
+    height:auto;
+    padding-top: 70px;
+    padding-bottom:50px;
+    
+    /*background:red;*/
+}
+.subject_box {
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+
+    /*min-height: 640px;*/
+    padding-bottom:20px;
+    position: relative;
+    background:#fff;
+}
+.subject_progress {
+    padding: 30px 200px 30px 30px;
+    background: #3fc0cd;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+.subject_main{
+    background: #FFF;
+    padding: 20px;
+    border-bottom:dashed #ddd 1px;
+}
+.shiti_option_warp{
+    margin:15px 0;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding:8px 15px;
+    background: #FFF;
+    display: block;
+}
+.subject-main .radio {
+    margin: 0;
+    line-height: 20px;
+}
+.radio .icons {
+    width: 14px;
+    height: 14px;
+
+    background: #FFF;
+    display: inline-block;
+    border: 1px solid #DDD;
+    vertical-align: -3px;
+    margin-right: 3px;
+    line-height: normal;
+    position: relative;
+}
+.radio input {
+    display: none;
+    outline: medium none!important;
+}
+label.radio pre {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 850px;
+    font-size: 14px;
+    font-weight:normal;
+
+    padding: 0;
+    margin: 0;
+    background: 0 0;
+    border: none;
+}
+.button_warp{
+    padding:20px 20px 20px 10px;
+}
+.button_warp button{
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #1dacf9;
+    padding: 6px 18px;
+    margin-left: 10px;
+
+    border-radius: 5px;
+    background: #2da5ec;
+    color: #fff;
+    font-size: 16px;
+    background-color: #1dacf9;
+}
+.button_warp button:hover{
+    background-color: #1dacaa;
+}
+.explain_warp{
+    display:none;
+}
+.ft_warp{
+   /* position:fixed;*/
+    bottom: 0;
+    left: 0;
+
+    width:100%;
+    background:#3fc0cd;
+}

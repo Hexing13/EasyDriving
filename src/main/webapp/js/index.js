@@ -17,34 +17,49 @@ $(document).ready(function(){
      }
         );
         validForm2();
+    $("#signIn").click(function(){
+        //var datas={
+        //    u_email:$("#form3 input")[0].val(),
+        //    u_password:$("#form3 input")[1].val()
+        //};
+        $.ajax({
+            url:"user/login",
+            data:$("#form3").serialize(),
+            type:'post',
+            dataType:'json',
+            success:function(r) {
+                if (r.result == "success") {
+                    alert("成功！");
+                } else
+                    alert("失败");
+            }
 
+        });
+    });
 });
 function addUser(){
-        var user={
-            u_email:$("#user_email").val(),
-            u_name:$("#user_name").val(),
-            u_password:$("#pwd1").val()
-        };
-
+        //var user={
+        //    u_email:$("#user_email").val(),
+        //    u_name:$("#user_name").val(),
+        //    u_password:$("#user_password").val()
+        //};
         $.ajax({
-            url:'http://localhost:8080/EasyDriving/user/regist',
-            data:user,
+            url:"user/regist",
+            data:$("#form2").serialize(),
             type:'post',
-            dataType:"json",
+            dataType:'json',
             success:function(r){
-                alert(r.result);
-
-                if(r=="success"){
+                if(r.result=="success"){
                     alert("注册成功！");
-                }else if(r=="email"){
+                }else if(r.result=="email"){
                     alert("注册失败，邮箱已存在！");
-
-                }else if(r=="name"){
+                }else if(r.result=="name"){
                     alert("注册失败，用户名已存在！");
                 }
             }
         });
     }
+
 //form2验证
 function validForm2(){
    var stp=$("signUp");

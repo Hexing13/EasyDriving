@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2015-12-12 19:15:21
 * @Last Modified by:   anchen
-* @Last Modified time: 2015-12-17 23:02:11
+* @Last Modified time: 2016-06-01 17:30:23
 */
 /*banner*/
 .head_banner{
@@ -14,11 +14,13 @@
     top:0;
     left:0;
 
-    background-color:#00BCD4;
+    background-color:#3fc0cd;
     overflow:hidden;
 }
 .head_banner .pic_list{
     position:absolute;
+
+    /*background: url("images/text.jpg");*/
 }
 .head_banner .warp{
     position:relative;
@@ -69,7 +71,7 @@
     color:#fff;
     font-weight:700;
 
-    background-color:#00BCD4;
+    background-color:#3fc0cd;
 }
 #tab .tab_warp{
     width:100%;
@@ -113,25 +115,6 @@
     padding-left: 20px;
     cursor: pointer;
 }
-#tab input[type="button"],
-.login_btn{
-    margin-top:10px;
-
-    color: #fff;
-    font-size: 16px;
-    outline:none;
-
-    background-image: -o-linear-gradient(bottom,#00BCD4 0,#60C7D1 100%);
-    background-image: -webkit-linear-gradient(bottom,#00BCD4 0,#60C7D1 100%);
-    background-image: -webkit-gradient(linear,left bottom,left top,from(#00BCD4),to(#60C7D1));
-    background-image: linear-gradient(bottom,#00BCD4 0,#60C7D1 100%);
-    -webkit-box-shadow: inset 0 1px 0 rgba(176,223,243,.75);
-    box-shadow: inset 0 1px 0 rgba(176,223,243,.75);
-    cursor: pointer;
-    text-align: center;
-    background-color: #00BCD4;
-    word-spacing: 35px;
-}
 .tab_warp .box .user_type,
 .tab_warp .box .safe {
     position:relative;
@@ -146,35 +129,23 @@
 .content{
     background-color:#fff;
 }
-.content section{
+.content .block,.menu{
     width:90%;
-    height:150px;
-
     margin:0 auto;
-    padding-top:45px;
-    display:table;
-    vertical-align:middle;
 }
-.content section li{
-    width:25%;
-    height:auto;
-
-    display:table-cell;
+.content .menu{
+    padding:15px 0;
 }
-.content section a{
-    display:inline-block;
-
-    width:120px;
-    height:120px;
-    border-radius:65px;
-
-    background-color:#00BCD4;
+.menu li{
+    display: inline-block;
+    width: 19.7%;
+}
+.menu .list-group-item{
+    border-radius: 65px;
 }
 .content .block{
-    width:90%;
     height:350px;
 
-    margin:0 auto;
     border:1px solid #00BCD4;
 }
 /*向下的小三角形*/
@@ -190,6 +161,12 @@
     color:#ff2121;
     font-size:9px;
     text-indent:1rem;
-    
     padding:3px 0;
-}    
+} 
+
+/*尾部样式   */
+footer{
+    width:100%;
+    height:150px;
+    background-color: #00BCD4;
+}

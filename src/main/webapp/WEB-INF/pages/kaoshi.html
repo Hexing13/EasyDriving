@@ -9,8 +9,24 @@
     <a href="#" onclick="shunxu()">顺序练习</a>
     <a href="#">章节练习</a>
     <a href="#" onclick="suiji()">随机练习</a>
+    <a href="#" onclick="count()">获得试题总数</a>
 </body>
 <script>
+    var count = function(){
+        var data={
+            s_type:"c1_4_chapter"
+        };
+
+        $.ajax({
+            url: 'subject/gettestcount',
+            data: data,
+            type: 'post',
+            dataType: "json",
+            success: function (r) {
+                alert(r);
+            }
+        });
+    }
     var shunxu = function(){
         var data={
             s_type:"c1_4_chapter06",

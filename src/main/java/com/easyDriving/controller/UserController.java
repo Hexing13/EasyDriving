@@ -90,7 +90,9 @@ public class UserController {
     @RequestMapping(value = "login",method = RequestMethod.POST)
     public @ResponseBody String doLogin(@RequestParam String u_email,@RequestParam String u_password,HttpSession session) throws IOException {
         JSONObject jsonObject = new JSONObject();
+        System.out.println("u_email: "+u_email);
         if(userService.doLogin(u_email,u_password)==1){
+            System.out.println("相等");
             session.setAttribute("u_flag","on");
             session.setAttribute("u_email",u_email);
             session.setAttribute("u_name","noname");
@@ -98,7 +100,7 @@ public class UserController {
         }else {
             jsonObject.put("result","fail");
         }
-      //  System.out.println(jsonObject.toString());
+        System.out.println(jsonObject.toString());
 
         return jsonObject.toString();
     }

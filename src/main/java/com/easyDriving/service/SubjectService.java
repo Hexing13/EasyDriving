@@ -30,4 +30,9 @@ public class SubjectService{
     public int getTotalCount(String s_type) throws IOException {
         return subjectDao.getTotalCount(s_type);
     }
+
+    //获得某一科目有多少章节
+    public int getTotalChapter(String s_type) throws IOException {
+        return subjectDao.getTotalChapter(s_type);
+    }
 }

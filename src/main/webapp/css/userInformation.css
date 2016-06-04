@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2015-12-13 22:12:20
 * @Last Modified by:   anchen
-* @Last Modified time: 2015-12-16 19:43:12
+* @Last Modified time: 2015-12-24 12:49:37
 */
 html,body,div,form,h3{
     margin:0;
@@ -26,15 +26,42 @@ body{
 .fill_form .form_title{
     width:100%;
     height:45px;
+    line-height:45px;
+
 
     background: -webkit-linear-gradient(#a1afc9, #177cb0); 
     background: -o-linear-gradient(#a1afc9,#177cb0);  
     background: -moz-linear-gradient(#a1afc9, #177cb0); 
     background: linear-gradient(#a1afc9, #177cb0);
 }
-/*.content input[type="text"],
-.content input[type="password"],
-.content input[type="submit"]{
+.file_left,.fill_right{
+    width:50%;
+    height:auto;
+
+    float:left;
+
+    padding:15px;
+    text-align:center;
+}
+.fstyle1{
+    width:450px;
+    height:auto;
+
+    text-align:right;
+    margin-bottom:8px;
+}
+.fstyle2{
+    text-align:left;
+}
+.head_img{
+    margin-left:30px;
+    margin-bottom:8px;
+}
+.fstyle_gender{
+    margin-left:50px;
+}
+.fstyle1 input[type="text"],
+.fstyle1 input[type="password"]{
     width:350px;
     height:35px;
     line-height: 35px;
@@ -50,15 +77,14 @@ body{
 
     margin-bottom:10px;
 }
-.content input[type="radio"]{
+.fstyle1 input[type="radio"]{
     width:16px;
     height:16px;
 
-    margin: 3px 3px 0px 5px;
+   /* margin: 3px 3px 0px 5px;*/
     outline:none;
 }
-.content label{
+.fstyle1 label{
     padding-left: 20px;
     cursor: pointer;
 }
-*/

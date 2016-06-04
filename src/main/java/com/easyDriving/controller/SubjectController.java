@@ -136,15 +136,33 @@ public class SubjectController {
         return "success";
     }
 
+    //求各个科目的试题总数
+    @RequestMapping(value = "gettestcount",method = RequestMethod.POST)
+    public @ResponseBody String getTestCount(@RequestParam String s_type) throws IOException {
+        JSONObject jsonObject = new JSONObject();
+        int count = 0;
+        if(s_type.indexOf("chapter")!=-1){//求各个章节的总数
+            //获得有多少章节
+            count = subjectService.getTotalChapter(s_type.split("_chapter")[0]);
+            //分别获得各章节试题的数目
+            for(int i = 1; i <=count; i++){
+                jsonObject.put(s_type + "0" + i, subjectService.getTotalCount(s_type + "0" + i));
+            }
+        }else {//获得各科目的试题总数
+            count = subjectService.getTotalCount(s_type);
+            jsonObject.put(s_type,String.valueOf(count));
+        }
+        System.out.println(jsonObject);
+        return jsonObject.toString();
+    }
+
+    //获得每一道试题的详情
     @RequestMapping(value = "gettest",method = RequestMethod.POST)
     public @ResponseBody String  getTtest(@RequestParam String s_type,@RequestParam String method,@RequestParam int id) throws IOException {
-        System.out.println(s_type);
-        System.out.println(method);
-        System.out.println(id);
+
         if(method.equals("suiji")){
             int count = subjectService.getTotalCount(s_type);
             id = (int) (1+Math.random()*count);
-            System.out.println("随机："+id);
         }
         Subject subject = subjectService.getTest(s_type, method, id);
         JSONObject jsonObject = JsonHelper.toJSON(subject);

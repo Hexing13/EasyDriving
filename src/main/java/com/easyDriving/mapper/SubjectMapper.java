@@ -20,4 +20,8 @@ public interface SubjectMapper {
     //获得试题的总数
     @Select("select count(s_id) from ${s_type}")
     public int getTotalCount(@Param("s_type")String s_type);
+
+    //获得某一科目有多少章节
+    @Select("select count(distinct s_chapter) from ${s_type}")
+    public int getTotalChapter(@Param("s_type")String s_type);
 }
