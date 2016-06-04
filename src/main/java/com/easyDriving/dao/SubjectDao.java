@@ -36,4 +36,15 @@ public class SubjectDao{
             sqlSession.close();
         }
     }
+
+    //获得试题的总数
+    public int getTotalCount(String s_type) throws IOException {
+        SqlSession sqlSession = MybatisUtils.getSession();
+        try {
+            SubjectMapper subjectMapper = sqlSession.getMapper(SubjectMapper.class);
+            return subjectMapper.getTotalCount(s_type);
+        }finally {
+            sqlSession.close();
+        }
+    }
 }

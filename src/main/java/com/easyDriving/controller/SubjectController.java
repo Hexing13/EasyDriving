@@ -138,14 +138,16 @@ public class SubjectController {
 
     @RequestMapping(value = "gettest",method = RequestMethod.POST)
     public @ResponseBody String  getTtest(@RequestParam String s_type,@RequestParam String method,@RequestParam int id) throws IOException {
-        if(method=="suiji"){
-
+        System.out.println(s_type);
+        System.out.println(method);
+        System.out.println(id);
+        if(method.equals("suiji")){
+            int count = subjectService.getTotalCount(s_type);
+            id = (int) (1+Math.random()*count);
+            System.out.println("随机："+id);
         }
         Subject subject = subjectService.getTest(s_type, method, id);
-//        System.out.println("id:"+subject.getS_id());
-//        System.out.println("jiexi: "+subject.getJiexi());
         JSONObject jsonObject = JsonHelper.toJSON(subject);
-        System.out.println(jsonObject.toString());
         return jsonObject.toString();
     }
 

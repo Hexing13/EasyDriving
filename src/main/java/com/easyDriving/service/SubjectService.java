@@ -25,4 +25,9 @@ public class SubjectService{
     public Subject getTest(String s_type, String method, int id) throws IOException {
         return subjectDao.getTest(s_type,method,id);
     }
+
+    //获得试题的总数
+    public int getTotalCount(String s_type) throws IOException {
+        return subjectDao.getTotalCount(s_type);
+    }
 }
