@@ -24,7 +24,7 @@ public class MailSend {
         email.setCharset("UTF-8");// 必须放在前面，否则乱码
         try {
             email.setFrom("1776898728@qq.com", "1776898728");
-            email.setSubject("subject中文");
+            email.setSubject("邮箱验证");
             email.setHtmlMsg("<a href=" + controller + ">" + href + "</a>");
             email.addTo(to);
             email.send();
@@ -47,7 +47,7 @@ public class MailSend {
         email.setCharset("UTF-8");// 必须放在前面，否则乱码
         try {
             email.setFrom("1776898728@qq.com", "1776898728");
-            email.setSubject("subject中文");
+            email.setSubject("密码验证");
             email.setHtmlMsg("<a href=" + controller + ">" + href + "</a>");
             email.addTo(to);
             email.send();

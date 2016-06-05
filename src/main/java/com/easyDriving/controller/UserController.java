@@ -5,7 +5,7 @@ import com.easyDriving.service.UserService;
 import com.easyDriving.utils.MailSend;
 import com.easyDriving.utils.Md5;
 import com.easyDriving.utils.VerifyCodeUtils;
-import org.json.JSONObject;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,12 +38,10 @@ public class UserController {
         synchronized (UserService.class){
             if (userService.emailIsEqual(u_email)!=0){
                 jsonObject.put("result", "email");
-                // System.out.println(jsonObject.toString());
                 return jsonObject.toString();
             }
             if(userService.nameIsEqual(u_name)!=0) {
                 jsonObject.put("result","name");
-                // System.out.println(jsonObject.toString());
                 return jsonObject.toString();
             }
             Random random = new Random();
@@ -60,7 +58,6 @@ public class UserController {
             jsonObject.put("result", "success");
             MailSend.SendMail(u_email,u_name,str);
         }
-        System.out.println(jsonObject.toString());
         return jsonObject.toString();
     }
 
@@ -70,19 +67,15 @@ public class UserController {
     public @ResponseBody String doValidate(@RequestParam String name,@RequestParam String acticode) throws IOException {
         JSONObject jsonObject = new JSONObject();
         String u_acticode = userService.getActicode(name);
-        System.out.println(u_acticode   );
+
         if(u_acticode==null){
-            //如果已经验证过
-            jsonObject.put("result","done");
+            jsonObject.put("result","fail");
+        }else if (u_acticode.equals(acticode)){
+            userService.modifyState(name);
+            jsonObject.put("result", "success");
         }else {
-            //没有验证过
-            if (u_acticode.equals(acticode)){
-                    jsonObject.put("result", "success");
-            }else {
-                jsonObject.put("result","fail");
-            }
+            jsonObject.put("result","fail");
         }
-       // System.out.println(jsonObject.toString());
         return jsonObject.toString();
     }
 
@@ -92,7 +85,6 @@ public class UserController {
         JSONObject jsonObject = new JSONObject();
         System.out.println("u_email: "+u_email);
         if(userService.doLogin(u_email,u_password)==1){
-            System.out.println("相等");
             session.setAttribute("u_flag","on");
             session.setAttribute("u_email",u_email);
             session.setAttribute("u_name","noname");
@@ -101,7 +93,6 @@ public class UserController {
             jsonObject.put("result","fail");
         }
         System.out.println(jsonObject.toString());
-
         return jsonObject.toString();
     }
 
@@ -172,6 +163,7 @@ public class UserController {
         return jsonObject.toString();
     }
 
+    //获得用户信息
     @RequestMapping(value = "getuserinfo",method = RequestMethod.POST)
     public @ResponseBody String getUserInfo(){
         JSONObject jsonObject = new JSONObject();

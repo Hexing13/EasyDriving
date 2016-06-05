@@ -23,7 +23,6 @@ public class Md5 {
             BASE64Encoder base64en = new BASE64Encoder();
             try {
                 newstr = base64en.encode(md5.digest(str.getBytes("utf-8")));
-                System.out.println(newstr+" "+newstr.length());
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }

@@ -10,8 +10,25 @@
     <a href="#">章节练习</a>
     <a href="#" onclick="suiji()">随机练习</a>
     <a href="#" onclick="count()">获得试题总数</a>
+    <a href="#" onclick="video()">获得视频</a>
 </body>
 <script>
+    var video = function(){
+        var data={
+            v_type:"c1_2"
+        };
+
+        $.ajax({
+            url: 'video/getvideo',
+            data: data,
+            type: 'post',
+            dataType: "json",
+            success: function (r) {
+                alert(r);
+            }
+        });
+    }
+
     var count = function(){
         var data={
             s_type:"c1_4_chapter"

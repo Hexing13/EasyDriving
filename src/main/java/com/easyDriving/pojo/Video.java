@@ -6,7 +6,9 @@ package com.easyDriving.pojo;
 public class Video {
     private int v_id;//自增
     private String v_type;
-    private String v_name;//名字/路径
+    private String v_order;
+    private String v_name;
+    private String v_address;
 
     public int getV_id() {
         return v_id;
@@ -30,5 +32,20 @@ public class Video {
 
     public void setV_name(String v_name) {
         this.v_name = v_name;
+    }
+    public String getV_address() {
+        return v_address;
+    }
+
+    public void setV_address(String v_address) {
+        this.v_address = v_address;
+    }
+
+    public String getV_order() {
+        return v_order;
+    }
+
+    public void setV_order(String v_order) {
+        this.v_order = v_order;
     }
 }

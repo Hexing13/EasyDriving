@@ -2,12 +2,11 @@ package com.easyDriving.controller;
 
 import com.easyDriving.pojo.Subject;
 import com.easyDriving.service.SubjectService;
-import com.easyDriving.utils.JsonHelper;
+import net.sf.json.JSONObject;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +32,7 @@ public class SubjectController {
 
     @RequestMapping()
     public String index(){
-        return "kaoshi";
+        return "kemu1";
     }
 
 //    @RequestMapping(value = "addtest",method = RequestMethod.POST)
@@ -165,7 +164,8 @@ public class SubjectController {
             id = (int) (1+Math.random()*count);
         }
         Subject subject = subjectService.getTest(s_type, method, id);
-        JSONObject jsonObject = JsonHelper.toJSON(subject);
+//        JSONObject jsonObject = JsonHelper.toJSON(subject);
+        JSONObject jsonObject = JSONObject.fromObject(subject);
         return jsonObject.toString();
     }
 
